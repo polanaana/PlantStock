@@ -1,0 +1,11 @@
+<p>
+  <a href="{% url 'plants:index %}">PlantStock</a> -
+  {% if user.is_authenticated %}
+    Hello, {{ user.name }}.
+    <a href={% url 'users:logout' %}">Log out</a>
+  {% else}
+    <a href="{% url 'users:login' %}">Zaloguj</a>
+  {% endif %}
+</p>
+
+{% block content %}{% endblock content %}
